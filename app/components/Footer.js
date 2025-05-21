@@ -1,7 +1,10 @@
+import SocialLinks from './SocialsLinks'
+
+
 export default function Footer(){
 	return (
 		<footer>
-			<h1> Footer</h1>
+			<SocialLinks />
 		</footer>
 	);
 }

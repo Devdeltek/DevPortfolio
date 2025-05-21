@@ -1,9 +1,27 @@
-import {BlogPostsByPublish} from '../components/BlogPostsList'
+import { BlogListByPublish, BlogListByCategory, BlogListByTags } from '../components/BlogPostsList'
 
-import {BlogCardsByPublish} from '../components/BlogPreviewCard'
+<main>
 
+	# Links to All Blog Posts
 
-# View all blog posts
-<BlogPostsByPublish />
+	Here you can view all my posts organized in a couple different ways:
+	 - <a href="#lastUpdated"> By most recently updated </a>
+	 - <a href="#byCategory"> By category </a>
+	 - <a href="#byTags"> By tags </a>
 
-<BlogCardsByPublish />
+	<section>
+		<h2 id="lastUpdated"> Blog Posts Sorted By Last Updated </h2>
+		<BlogListByPublish />
+	</section>
+
+	<section>
+		<h2 id="byCategory"> Blog Posts Sorted By Category </h2>
+		<BlogListByCategory />
+	</section>
+
+	<section>
+		<h2 id="byTags"> Blog Posts Sorted By Tags </h2>
+		<BlogListByTags />
+	</section>
+
+</main>

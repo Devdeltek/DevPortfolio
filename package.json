@@ -16,7 +16,8 @@
     "next": "15.2.4",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@pigment-css/nextjs-plugin": "^0.0.30"
