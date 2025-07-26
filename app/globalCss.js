@@ -1,6 +1,10 @@
 import { globalCss, css } from '@pigment-css/react';
 
 globalCss`
+  html {
+    scroll-padding-top: 100px;
+  }
+
   body {
     background-color: ${({ theme }) => theme.colorSchemes.light.colors.background};
     display: flex;
@@ -8,34 +12,31 @@ globalCss`
     min-height: 100vh;
     margin: 0px;
     padding: 0px;
-    opacity: 0.8;
     font-family: ${({theme}) => theme.typography.fontFamily};
-    font-size: 1em;
+    font-size: ${({theme}) => theme.typography.fontSize.medium};
   }
 
   main {
-    margin-left: ${({ theme }) => theme.spacing.pageMarginsFull}vw;
-    margin-right: ${({ theme }) => theme.spacing.pageMarginsFull}vw;
+    margin-left: ${({ theme }) => theme.spacing.pageMarginsFull};
+    margin-right: ${({ theme }) => theme.spacing.pageMarginsFull};
+    padding: ${({ theme }) => theme.spacing.buffer};
     flex: 1;
-    padding: ${({ theme }) => theme.spacing.horizontalSpacing}px;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: ${({theme}) => theme.typography.fontSize.title};
+    Margin: ${({theme}) => theme.spacing.buffer};
     text-align: center;
   }
 
-  header {
-    display: flex;
-    justify-content: flex-start;
-    background-color: ${({ theme }) => theme.colorSchemes.light.colors.component};
+  h2 {
+    font-size: ${({theme}) => theme.typography.fontSize.extraLarge};
+    Margin: ${({theme}) => theme.spacing.buffer};
   }
 
-  footer {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: ${({ theme }) => theme.colorSchemes.light.colors.component};
-    min-height: 50px;
+  h3 {
+    font-size: ${({theme}) => theme.typography.fontSize.Large};
+    Margin: ${({theme}) => theme.spacing.buffer};
   }
 
   nav {
@@ -45,14 +46,18 @@ globalCss`
     text-align: center;
   }
 
+  article {
+    background-color: ${({ theme }) => theme.colorSchemes.light.colors.forground};
+    border-radius: ${({ theme }) => theme.spacing.curveRadius};
+    padding: ${({ theme }) => theme.spacing.buffer};
+  }
+
   img {
-    padding: 10px;
+    padding: ${({ theme }) => theme.spacing.bufferSmall};
   }
 
   a {
     text-decoration: none;
-    margin: 5px;
-    padding: 5px;
     color: ${({ theme }) => theme.colorSchemes.light.colors.link};
   }
 
@@ -62,8 +67,8 @@ globalCss`
 
   @media screen and (max-width: 900px){
     main{
-      margin-left: ${({ theme }) => theme.spacing.pageMarginsSmall}vw;
-      margin-right:${({ theme }) => theme.spacing.pageMarginsSmall}vw;
+      margin-left: ${({ theme }) => theme.spacing.pageMarginsSmall};
+      margin-right:${({ theme }) => theme.spacing.pageMarginsSmall};
     }
   }
 `;

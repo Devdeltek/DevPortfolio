@@ -31,9 +31,10 @@ export default withMDX(withPigment(nextConfig, {
     colorSchemes: {
       light: {
         colors: {
-          background: 'MintCream',
-          article: 'LightGray',
-          component: 'BlanchedAlmond',
+          background: 'LightGray',
+          forground: ' FloralWhite',
+          splash: '#5FA061',
+          accent: 'CadetBlue',
           text: 'Black',
           link: 'DarkSlateGray',
           hover: 'DarkCyan',
@@ -43,7 +44,7 @@ export default withMDX(withPigment(nextConfig, {
         colors: {
           background: 'DarkOliveGreen',
           article: 'DarkGray',
-          component: 'DarkKhaki',
+          component: 'Coral',
           text: 'White',
           link: 'Lavender',
           hover: 'LightCyan',
@@ -52,19 +53,21 @@ export default withMDX(withPigment(nextConfig, {
     },
     getSelector: (colorScheme) => colorScheme ? `.theme-${colorScheme}` : ':root',
     spacing: {
-      pageMarginsFull: 20,
-      pageMarginsSmall: 5,
-      horizontalSpacing: 5,
-      verticalSpacing: 5,
+      pageMarginsFull: '20vw',
+      pageMarginsSmall: '5vw',
+      curveRadius: '10px',
+      bufferSmall: '0.1em',
+      buffer: '0.5em',
+      bufferLarge: '1em'
     },
     typography: {
       fontFamily: 'Arial',
       fontSize: {
-        small: .75,
-        medium: 1,
-        large: 1.25,
-        extraLarge: 1.5,
-        title: 2,
+        small: '.75em',
+        medium: '1em',
+        large: '1.25em',
+        extraLarge: '1.5em',
+        title: '2em',
       },
     },
   }),

@@ -16,11 +16,14 @@ props:
       private
 */
 
-const PostLink = styled(Link)({
-  padding: '1px',
+const PostLink = styled(Link)(({ theme }) => ({
+  margin: theme.spacing.bufferSmall,
+  padding: theme.spacing.bufferSmall,
   display: 'inline-block',
-  border: '1px solid',
-  borderRadius: '5px',
+  border: '1px solid ' + theme.colorSchemes.light.colors.accent,
+  boxShadow: '3px 3px 1px DarkGray',
+  borderRadius: theme.spacing.curveRadius,
+  backgroundColor: theme.colorSchemes.light.colors.button,
   width: '150x',
   textAlign: 'center',
   '@media (max-width: 520px)': {
@@ -28,7 +31,7 @@ const PostLink = styled(Link)({
     width: '45%',
     minWidth: '100px',
   },
-});
+}));
 
 export function BlogLink(props) {
   let post = props.post

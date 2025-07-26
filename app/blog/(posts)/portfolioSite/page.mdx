@@ -1,6 +1,9 @@
+import ArticleHeading from '../../../components/ArticleHeading'
+import ArticleFooter from '../../../components/ArticleFooter'
+
 export const meta = {
 	title: "Next JS Portfolio Site",
-	desc: "A simple portfolio site made with Next JS and MDX used to host updates for my personal projects.",
+	desc: "A portfolio site made to host breakdowns of my personal projects made with NextJS",
 	publish_date: "2025-03-18",
 	update_date: "2025-03-22",
 	category: "Web Development",
@@ -8,15 +11,40 @@ export const meta = {
 	private: false
 }
 
-# Next JS Portfolio site
 
+
+<ArticleHeading info={meta} />
+
+<section>
+## Design Ideas
+
+My main focus was to create a website where I can showcase my projects and make detailed write ups about the creation process. I wanted to keep the writing and publishing process super simple so there is as little friction as possible between me coming up with an idea and getting it uploaded. I decided early on I was going to use Markdown for the actual writing experience as I am already an avid [Obsidian](https://obsidian.md/) user and I've fallen in love with the format. Lucky for me the [Tailwind CSS Blog](https://tailwindcss.com/blog/building-the-tailwind-blog) has a write up on how they made their own blog with very similar goals to mine. It was very helpful in pointing me in the right direction.
+</section>
+
+<section>
 ## How it's made
 
 I made this portfolio site using the following technologies:
- - Next JS
- - Pigment CSS
- - MDX
+ - [ReactJS](https://react.dev/)
+ - [NextJS](https://nextjs.org/)
+ - [Pigment CSS](https://github.com/mui/pigment-css)
+ - [MDX](https://mdxjs.com/)
 
-## Design Ideas
+It was my first time using NextJS, Pigment CSS and MDX. Overall development went smoothly, NextJS and MDX work together nicely
+</section>
 
-My main focus was to create a site where I can write out my though process for my projects to detail my learning process. I wanted to make the writing process as easy as possible, so a large focus was intigrating the markdown format and automatically importing the articles, so all I have to do is make a new file and type some stuff out, then recompile the website to have it all updated.
+<section>
+## CSS
+</section>
+
+<section>
+## Semantic HTML and Accessability
+</section>
+
+<section>
+## Todo
+
+:joy:
+</section>
+
+<ArticleFooter />

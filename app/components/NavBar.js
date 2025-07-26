@@ -2,22 +2,19 @@ import Link from 'next/link'
 import { styled, css } from '@pigment-css/react';
 
 
-const NavLink = styled('Link')({
-	paddingLeft: '.5em',
-	marginLeft: '.5em',
-	color: 'black',
-	fontSize: '1em',
-});
+const NavLink = styled(Link)(({ theme }) => ({
+	padding: theme.spacing.buffer,
+}));
 
 export default function NavBar(){
 	return (
 		<nav>
-			<Link href = '/'>
+			<NavLink href = '/'>
           		Home
-        	</Link>
-			<Link href = '/blog'>
+        	</NavLink>
+			<NavLink href = '/blog'>
           		Blog
-        	</Link>
+        	</NavLink>
 		</nav>
 	);
 }

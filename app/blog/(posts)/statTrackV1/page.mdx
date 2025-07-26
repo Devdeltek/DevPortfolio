@@ -1,9 +1,11 @@
-import menuImg from './stattrackerMainMenu.png';
+import ArticleHeading from '../../../components/ArticleHeading'
+import ArticleFooter from '../../../components/ArticleFooter'
+import thumbnail from './thumbnail.png';
 
 export const meta = {
 	title: "TTRPG Stat Tracker",
-	desc: "A simple python program with a UI that I made to track stats like damage done and damage healed.",
-	img: menuImg,
+	desc: "Stat tracker for TTRPGs made using python",
+	img: thumbnail.src,
 	publish_date: "2025-06-26",
 	update_date: "2025-03-26",
 	category: "Misc",
@@ -11,7 +13,7 @@ export const meta = {
 	private: false
 }
 
-# Test1
+<ArticleHeading info={meta} />
 
 - Be specific about the projects the applicant would be working on after they started
 - Be clear that we are a small team, so everyone has to do a bit of everything, including customer support
@@ -19,8 +21,4 @@ export const meta = {
 - Go into detail about specific hard problems we expect to run into on the next major upcoming project, to help the applicant understand the sort of expertise that would be valuable to us
 - Share concrete salary and benefit information. I would never apply for a job without a clear understanding of the salary, so why should I expect talented people to apply for our posting without it?
 
-<img src={menuImg.src} />
-
-```js
-	console.log("hello");
-```
+<ArticleFooter />

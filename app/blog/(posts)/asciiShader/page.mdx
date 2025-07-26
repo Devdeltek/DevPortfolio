@@ -1,12 +1,57 @@
+import ArticleHeading from '../../../components/ArticleHeading'
+import ArticleFooter from '../../../components/ArticleFooter'
+import BitMap from './BitMap.png'
+import Downscaled from './Downscaled.png'
+import NoFilter from './NoFilter.png'
+import WithFilter from './WithFilter.png'
+
+import thumbnail from './thumbnail.png'
 export const meta = {
     title: "Ascii Shader",
-    desc: "A simple shader that replaces a video with an ascii version of the video",
+    desc: "Shader that uses brightness of pixels to convert images to ascii art",
     publish_date: "2025-03-15",
     update_date: "2025-03-26",
+    img: thumbnail.src,
     category: "Graphics Programming",
     tags: ["WebGL", "Shadertoy"],
     private: false
 }
 
-# Title
+<ArticleHeading info={meta} />
+<section>
+## Inspiration
 
+I got this idea from a [video by Acerola](https://www.youtube.com/watch?v=gg40RWiaHRY). I really liked the look of the shader and wanted to make my own version to better understand how it works. You can see mine in action on [Shadertoy](https://www.shadertoy.com/view/MX3SDs).
+</section>
+
+<section>
+## Implementation
+
+My implementation follows a couple of fairly simple steps: 
+1. downscale the image
+2. calculate the luminance of each downscaled pixel
+3. Use the luminance value to find an appropiate character
+4. Calculate which position the current pixel would have in the character using a hash
+
+<center>
+    \- Original image -
+    <img src = {NoFilter.src} width="70%" alt="unaltered image" />
+    \- Downscaled -
+    <img src = {Downscaled.src} width="70%" alt="downscaled image" />
+    \- With filter added -
+    <img src = {WithFilter.src} width="70%" align="middle" alt="filtered image"/>
+</center>
+
+Overall it looks decent, but there are many areas that could be improved. First, to downscale the I essentially take every 8th pixel and use it to represent the whole 8x8 block. A better method would be to average the pixels in the 8x8 area, or to do a discrete fourier transform like [this article outlines](https://sidshome.wordpress.com/2022/03/27/how-to-scale-an-image-a-comparison-of-different-algorithms/). I also could include more characters or fiddle around the the sizing and shape of my chrarcters. Currently, I am using [this bitmap](https://thrill-project.com/archiv/coding/bitmap/) to construct them. Additionally, in his video Acerola takes it a step further by uing an edge detection algorithm to place dashes and slashes. Eventually I would like to implement this to make the image better defined. 
+</section>
+
+<section>
+## Todo
+
+- [x] Initial implementation
+- [ ] improve downscaling
+- [ ] add more characters for more light levels
+- [ ] Add edge detection
+</section>
+
+<ArticleFooter />

@@ -16,16 +16,18 @@ props:
       private
 */
 
-const Wrapper = styled('div')({
+const Wrapper = styled('article')(({ theme }) => ({
   width: '25%',
-  minWidth: '200px',
-  margin: '0.5em',
+  minWidth: '12em',
+  margin: theme.spacing.buffer,
+  padding: '0px',
+  boxShadow: '5px 5px 3px DarkGray',
   '@media (max-width: 520px)': {
     fontSize: 'clamp(.75em, 3vw, 1em)',
     width: '45%',
-    minWidth: '100px',
+    minWidth: '6em',
   },
-});
+}));
 
 const DateDiv = styled('span')({
   display: 'flex',
@@ -33,32 +35,33 @@ const DateDiv = styled('span')({
 });
 
 
-const LinkCard = styled(Link)({
-  border: 'solid 3px',
-  borderRadius: '10px',
-  height: '200px',
-  padding: '0.5em',
+const LinkCard = styled(Link)(({ theme }) => ({
+  border: 'solid 3px ' + theme.colorSchemes.light.colors.accent,
+  borderRadius: theme.spacing.curveRadius,
+  height: '16em',
+  padding: theme.spacing.buffer,
   margin: '0px',
+  backgroundColor: theme.colorSchemes.light.colors.forground,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
   textAlign: 'center',
   '@media (max-width: 520px)': {
-    height: '175px',
+    height: '16em',
   },
-});
+}));
 
 export default async function BlogCard(props) {
   let post = props.post
   return (
     <Wrapper>
       <LinkCard href = {post.link} key={post.link}>
-          <strong> {post.meta.title} </strong>
-          {post.meta.desc}
-          <DateDiv>
-            <small>Posted: {post.meta.publish_date} </small>
-            <small>Updated: {post.meta.update_date} </small>
-          </DateDiv>
+        <h3> {post.meta.title} </h3>
+        {post.meta.desc}
+        <DateDiv>
+          <small>Posted: {post.meta.publish_date} </small>
+          <small>Updated: {post.meta.update_date} </small>
+        </DateDiv>
      </LinkCard>
     </Wrapper>
   );
