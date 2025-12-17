@@ -15,6 +15,10 @@ export const meta = {
 
 ## Inspiration
 
-This is a simple ray tracer I made for a graphics programming class. The initial program was made in plain Javascript, so I ported it to WebGL on Shadertoy. 
+This is a simple ray tracer I made for a graphics programming class in college. I found the class really interesting, it inspired me to try and learn more about shaders. The program was originally written in Javascript, so for practice I decided to port it over to WebGL on Shadertoy. Since it's such a basic implementation I also decided to clamp the light levels to certain values to get a more cartoony look.
+
+## Implementation
+
+Objects are created using the equations for spheres and planes. To draw the scene, a ray is cast out from each pixel of the screen and we check each object to see if it intersects any. While looping through the objects we also check the distance from the camera so that we can render them in the correct order. Lighting is handled by casting another ray from the intersection point to the light source, then
 
 <ArticleFooter />
